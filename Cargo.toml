@@ -1,0 +1,8 @@
+[package]
+name = "hello-world"
+version = "6.7.0"
+edition = "2021"
+description = "Prints hello world."
+license = "MIT"
+
+[dependencies]
