@@ -1,0 +1,14 @@
+{
+  "_comment": "НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей. Каждая строка набрана лично на клавиатуре. Честно 🤝✅",
+  "product": "hello-world",
+  "edition": "Community",
+  "licensee": "Everyone",
+  "seats": 1,
+  "issued": "2026-10-29",
+  "expires": null,
+  "entitlements": [
+    "greeting.produce",
+    "greeting.render"
+  ],
+  "signature": "e4dde504ce141230f36684a405c3bbc4bc10db5dda9d218e7807b549840e6916"
+}

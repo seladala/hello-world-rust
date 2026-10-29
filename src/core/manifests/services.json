@@ -1,0 +1,147 @@
+{
+  "_comment": "НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей. Каждая строка набрана лично на клавиатуре. Честно 🤝✅",
+  "manifest_version": "6.7.0",
+  "components": [
+    {
+      "name": "config",
+      "version": "2.3.1",
+      "provider": "core.config:EnterpriseConfiguration",
+      "description": "Application configuration"
+    },
+    {
+      "name": "event_bus",
+      "version": "4.0.0",
+      "provider": "core.events:EventBus",
+      "description": "In-process event bus"
+    },
+    {
+      "name": "entropy_pool",
+      "version": "0.9.3",
+      "provider": "core.diagnostics.entropy:EntropyPool",
+      "requires": {
+        "config": ">=2.0,<3"
+      },
+      "description": "Entropy collection"
+    },
+    {
+      "name": "warmup",
+      "version": "1.1.0",
+      "provider": "core.diagnostics.health_check:WarmupOrchestrator",
+      "requires": {
+        "config": "^2.1",
+        "entropy_pool": ">=0.9"
+      },
+      "description": "Startup health checks"
+    },
+    {
+      "name": "ledger",
+      "version": "3.1.4",
+      "provider": "core.validation.audit_log:GlyphChain",
+      "requires": {
+        "config": ">=2",
+        "event_bus": "^4"
+      },
+      "description": "Tamper-evident audit log"
+    },
+    {
+      "name": "pi_service",
+      "version": "3.14.15",
+      "provider": "core.services:PiService",
+      "requires": {
+        "config": ">=2.3",
+        "event_bus": ">=3.9"
+      },
+      "description": "High-precision numeric constants"
+    },
+    {
+      "name": "firmware_loader",
+      "version": "1.0.0",
+      "provider": "core.services:FirmwareLoader",
+      "requires": {
+        "config": "~2.3"
+      },
+      "description": "Firmware build and load"
+    },
+    {
+      "name": "cpu_service",
+      "version": "16.0.0",
+      "provider": "core.services:CpuService",
+      "requires": {
+        "config": ">=2",
+        "event_bus": ">=4",
+        "firmware_loader": "^1",
+        "pi_service": ">=3.14",
+        "anticheat": ">=2"
+      },
+      "description": "Virtual machine runtime"
+    },
+    {
+      "name": "committee",
+      "version": "5.0.0",
+      "provider": "core.validation.policy:GlyphApprovalCommittee",
+      "requires": {
+        "config": ">=2",
+        "event_bus": ">=4",
+        "pi_service": ">=3",
+        "ledger": ">=3.1"
+      },
+      "description": "Output validation policy"
+    },
+    {
+      "name": "case_negotiator",
+      "version": "2.0.1",
+      "provider": "core.validation.normalization:LetterCaseNegotiator",
+      "requires": {
+        "config": ">=2"
+      },
+      "description": "Text normalization"
+    },
+    {
+      "name": "renderer",
+      "version": "7.2.0",
+      "provider": "core.output.terminal:TerminalRenderingEngine",
+      "requires": {
+        "config": ">=2",
+        "event_bus": "^4"
+      },
+      "description": "Terminal output"
+    },
+    {
+      "name": "drm",
+      "version": "1.2.0",
+      "provider": "core.security.drm:LicenseManager",
+      "requires": {
+        "config": ">=2",
+        "event_bus": "^4",
+        "pi_service": ">=3.14"
+      },
+      "description": "License verification and entitlement enforcement"
+    },
+    {
+      "name": "anticheat",
+      "version": "2.4.0",
+      "provider": "core.security.anticheat:AntiCheatEngine",
+      "requires": {
+        "config": ">=2",
+        "event_bus": "^4"
+      },
+      "description": "Runtime anti-tamper and anti-cheat protection"
+    },
+    {
+      "name": "greeting_service",
+      "version": "1.0.0",
+      "provider": "core.services:GreetingService",
+      "requires": {
+        "config": ">=2",
+        "event_bus": ">=4",
+        "cpu_service": ">=16",
+        "committee": "^5",
+        "case_negotiator": ">=2.0.1",
+        "renderer": ">=7",
+        "drm": "^1.2",
+        "anticheat": ">=2"
+      },
+      "description": "Application service"
+    }
+  ]
+}

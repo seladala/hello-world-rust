@@ -6,3 +6,13 @@ description = "Prints hello world."
 license = "MIT"
 
 [dependencies]
+hmac = "0.12"
+num-bigint = "0.4"
+num-integer = "0.1"
+num-rational = "0.4"
+num-traits = "0.2"
+sha2 = "0.10"
+
+[lints.clippy]
+# The compliance rounds rotate bits by hand, as the regulation prescribes.
+manual_rotate = "allow"
