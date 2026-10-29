@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Dynamically typed values, for payloads that may be anything at all.
 //!
 //! `repr()` renders a value the way the original interpreter would, so that

@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! UHX-16 cycle-approximate emulator.
 //!
 //! 64 KiB of byte-addressable memory, eight 16-bit registers, a downward

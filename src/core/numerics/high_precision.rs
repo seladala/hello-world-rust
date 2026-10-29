@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Chudnovsky algorithm with binary splitting. ~14 correct digits per term.
 
 use num_bigint::BigInt;

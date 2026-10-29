@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! GlyphChain: a proof-of-work blockchain that records every approved character.
 //!
 //! Decentralised across exactly one process.

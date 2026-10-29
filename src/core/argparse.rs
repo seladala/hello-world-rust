@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Command-line parsing in the image of a well-known standard library module:
 //! flag clusters (`-vv`), unambiguous long-option abbreviations (`--dis`),
 //! `--opt=value` diagnostics, `--` handling, and the same help layout.

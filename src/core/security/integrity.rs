@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! File integrity verification.
 //!
 //! Every source file, firmware image, configuration file and main.rs is pinned

@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! A JSON codec whose output matches the reference implementation's `json.dumps` byte for byte:
 //! ASCII-only output with surrogate-pair escapes, optional key sorting, configurable separators.
 

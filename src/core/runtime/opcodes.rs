@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! UHX-16 Instruction Set Architecture.
 //!
 //! The Unified Hardware eXecution unit is a 16-bit, 8-register, little-endian

@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! A semantic versioning implementation, because "1.2.3" is too hard to compare by eye.
 
 use std::fmt;

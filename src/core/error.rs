@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Exception hierarchy. Every way the program may refuse to greet you, in one enum.
 
 use std::fmt;

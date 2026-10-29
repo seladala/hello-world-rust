@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Byzantine-fault-tolerant consensus on the value of pi.
 //!
 //! Three independent algorithms each propose digits. A digit string is accepted

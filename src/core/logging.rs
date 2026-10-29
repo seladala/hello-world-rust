@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! A logging facility in the image of the standard library of a slower language.
 //!
 //! Records go to stderr as `[LEVEL] logger.name: message`, with the level name

@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! An entropy pool that carefully gathers randomness and then never uses it.
 
 use std::cell::{Cell, RefCell};

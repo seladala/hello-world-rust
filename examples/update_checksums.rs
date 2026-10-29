@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Re-pins every protected file in src/core/security/checksums.sha256.
 //!
 //! Run after any intentional change to a protected file: `cargo run --example update_checksums`

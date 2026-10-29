@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Disassembler, so that the machine code can be reviewed by the Architecture Board.
 
 use super::opcodes::Op;

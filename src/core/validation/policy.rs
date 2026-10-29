@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! The Glyph Approval Committee.
 //!
 //! No character reaches the terminal without being reviewed by five independent

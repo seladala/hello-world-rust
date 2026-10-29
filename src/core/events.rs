@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Synchronous, in-process, single-threaded, enterprise-grade event bus.
 
 use std::cell::RefCell;

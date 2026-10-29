@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Terminal Rendering Engine: turns approved glyphs into photons (via stdout).
 
 use std::cell::RefCell;

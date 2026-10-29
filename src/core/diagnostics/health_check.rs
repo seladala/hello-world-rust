@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Warm-up routines. None of them influence the output. All of them are mandatory.
 
 use std::collections::HashMap;

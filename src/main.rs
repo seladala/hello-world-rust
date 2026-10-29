@@ -1,4 +1,4 @@
-//! Hello World.
+//! Hello World. НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей. Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 
 use std::path::Path;
 use std::process::ExitCode;

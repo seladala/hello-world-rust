@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! A Mersenne Twister (MT19937) seeded, sampled and shuffled exactly like the reference
 //! implementation's `random.Random`, so that bogosort takes the same number of attempts.
 

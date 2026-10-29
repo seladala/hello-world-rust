@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Dependency resolution for internal components.
 //!
 //! Reads a JSON manifest, validates every version constraint, detects cycles

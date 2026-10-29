@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Runtime anti-tamper and anti-cheat protection.
 //!
 //! Detects debuggers, profilers, interactive inspection, patching of critical

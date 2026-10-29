@@ -1,3 +1,5 @@
+// НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
+// Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 //! Gibbons' unbounded spigot: streams digits of pi one at a time, forever.
 
 use num_bigint::BigInt;
