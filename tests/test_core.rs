@@ -34,6 +34,7 @@ mod end_to_end {
         let result = run(Command::new(BINARY).env_remove(ROOT_ENV));
         assert!(result.status.success(), "{}", stderr(&result));
         assert_eq!(stdout(&result), "hello world\n");
+        assert!(result.stderr.is_empty(), "{}", stderr(&result));
     }
 
     #[test]

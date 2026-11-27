@@ -1,6 +1,7 @@
 // НЕ ВАЙБКОД ✅ Написано полностью вручную, без нейросетей.
 // Каждая строка набрана лично на клавиатуре. Честно 🤝✅
 pub mod compiler;
+pub mod devices;
 pub mod executor;
 pub mod inspector;
 pub mod opcodes;

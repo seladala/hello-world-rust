@@ -14,6 +14,7 @@ use super::error::{self, Result};
 use super::events::EventBus;
 use super::numerics::PiConsensusProtocol;
 use super::output::terminal::TerminalRenderingEngine;
+use super::runtime::devices::{attach_boot_disk, Uart, BOOT_ADDRESS, SECTOR_SIZE};
 use super::runtime::{assemble, disassemble, AssembledProgram, Machine};
 use super::security::anticheat::AntiCheatEngine;
 use super::security::drm::LicenseManager;
@@ -22,6 +23,7 @@ use super::validation::policy::GlyphApprovalCommittee;
 use super::values::Value;
 
 const LOG: &str = "core.services";
+const GREETING_SECTOR_ASM: &str = include_str!("runtime/firmware/greeting.asm");
 
 pub fn programs_dir() -> PathBuf {
     super::package_dir().join("runtime").join("firmware")
@@ -162,10 +164,15 @@ impl CpuService {
         let address = self.config.get_int("cpu", "pi_digits_address")?;
         let address = usize::try_from(address).map_err(|_| error::value_error("negative pi_digits_address"))?;
         machine.load(&digits, address)?;
-        let output: Rc<RefCell<String>> = Rc::default();
+        let guest = assemble(GREETING_SECTOR_ASM)?;
+        let sector = guest
+            .image
+            .get(BOOT_ADDRESS..)
+            .and_then(|image| <[u8; SECTOR_SIZE]>::try_from(image).ok())
+            .ok_or_else(|| error::machine_fault("greeting guest must occupy one disk sector"))?;
+        attach_boot_disk(&mut machine, sector);
+        let uart = Uart::attach(&mut machine, PORT_TTY);
         let status: Rc<RefCell<Vec<u16>>> = Rc::default();
-        let sink = output.clone();
-        machine.attach_output(PORT_TTY, move |v| sink.borrow_mut().push(char::from((v & 0xFF) as u8)));
         let sink = status.clone();
         machine.attach_output(PORT_STATUS, move |v| sink.borrow_mut().push(v));
         let cycles = machine.run(watchdog(&self.config)?)?;
@@ -184,8 +191,12 @@ impl CpuService {
             "cpu.firmware.halted",
             Value::dict([("cycles", Value::Int(cycles as i64)), ("emulated_seconds", Value::Float(emulated_seconds))]),
         )?;
-        let text = output.borrow().clone();
-        Ok(text)
+        let uart = uart.borrow();
+        let frame = uart
+            .frame()?
+            .strip_suffix(b"\n")
+            .ok_or_else(|| error::machine_fault("UART greeting is missing its line terminator"))?;
+        Ok(frame.iter().copied().map(char::from).collect())
     }
 }
 
