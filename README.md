@@ -36,23 +36,6 @@ flowchart LR
 | **Hello World на Rust** | **1 587 (+1 487%)** | **1 587 (+1 487%)** |
 | [Hello World на Python](https://github.com/seladala/hello-world) | 100 | 100 |
 
-*Вымышленный рейтинг. 100 баллов у Python взяты за базу, 1 587 у Rust дают преимущество в 1 487%.*
-
-<details>
-<summary>Реальные замеры Rust на Linux</summary>
-
-В [JSON-отчёте](docs/performance/baseline.json) сохранены время запуска и размер бинарников для debug, release и минимального примера на Rust. Повторить замер можно через [Benchmark в GitHub Actions](https://github.com/seladala/hello-world-rust/actions/workflows/benchmark.yml) или локально на Linux с Python 3.
-
-```sh
-cargo build --locked
-cargo build --locked --release
-python3 scripts/benchmark.py --output benchmark.json
-```
-
-Для построения графика по JSON запустите `python3 scripts/plot_benchmark.py benchmark.json benchmark.png`. Понадобится Matplotlib.
-
-</details>
-
 ## Релизы
 
 Скачайте и распакуйте архив для своей платформы со страницы [Releases](https://github.com/seladala/hello-world-rust/releases/latest).
