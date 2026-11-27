@@ -1,0 +1,2 @@
+# Runtime integrity checks compare the exact bytes of these files on every platform.
+src/** text eol=lf
