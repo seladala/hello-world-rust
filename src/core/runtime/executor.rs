@@ -29,6 +29,7 @@ pub struct Machine {
     pub cycles: u64,
     pub out_ports: HashMap<u8, OutputSink>,
     pub in_ports: HashMap<u8, InputSource>,
+    interrupt: Option<Box<dyn FnMut() -> bool>>,
     dispatch: HashMap<Op, Handler>,
 }
 
@@ -54,6 +55,7 @@ impl Machine {
             cycles: 0,
             out_ports: HashMap::new(),
             in_ports: HashMap::new(),
+            interrupt: None,
             dispatch: Op::ALL.iter().map(|&op| (op, Self::handler(op))).collect(),
         }
     }
@@ -73,6 +75,10 @@ impl Machine {
 
     pub fn attach_input(&mut self, port: u8, source: impl FnMut() -> i64 + 'static) {
         self.in_ports.insert(port, Box::new(source));
+    }
+
+    pub fn attach_interrupt(&mut self, interrupt: impl FnMut() -> bool + 'static) {
+        self.interrupt = Some(Box::new(interrupt));
     }
 
     // ---------------------------------------------------------------- helpers
@@ -186,6 +192,8 @@ impl Machine {
             Op::POP => Self::op_pop,
             Op::OUT => Self::op_out,
             Op::IN => Self::op_in,
+            Op::WAIT => Self::op_wait,
+            Op::IRET => Self::op_iret,
         }
     }
 
@@ -370,5 +378,27 @@ impl Machine {
             .ok_or_else(|| error::machine_fault(format!("read from unmapped port 0x{port:02X}")))?;
         let value = (source() & MASK16) as u16;
         self.set_register(rd, value)
+    }
+
+    pub fn op_wait(&mut self) -> Result<()> {
+        let target = self.fetch16();
+        if self.interrupt.as_mut().is_some_and(|interrupt| interrupt()) {
+            let flags = u16::from(self.zero) | (u16::from(self.negative) << 1) | (u16::from(self.carry) << 2);
+            self.push(self.pc)?;
+            self.push(flags)?;
+            self.pc = target;
+        } else {
+            self.pc = self.pc.wrapping_sub(Op::WAIT.spec().size() as u16);
+        }
+        Ok(())
+    }
+
+    pub fn op_iret(&mut self) -> Result<()> {
+        let flags = self.pop()?;
+        self.zero = flags & 1 != 0;
+        self.negative = flags & 2 != 0;
+        self.carry = flags & 4 != 0;
+        self.pc = self.pop()?;
+        Ok(())
     }
 }

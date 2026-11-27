@@ -79,6 +79,8 @@ instruction_set! {
 
     OUT = 0x40, "pr", "port <- rs";
     IN = 0x41, "rp", "rd <- port";
+    WAIT = 0x42, "i", "sleep until a device interrupts, then enter the handler";
+    IRET = 0x43, "", "restore flags and resume after the interrupt";
 }
 
 pub const REGISTER_COUNT: usize = 8;
